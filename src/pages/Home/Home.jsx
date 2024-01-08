@@ -8,18 +8,42 @@ import { useRef, useState, useEffect } from 'react';
 import Contact from '../Contact/Contact';
 import Portfolio from '../Portfolio/Portfolio';
 import { faHouse, faGrip, faHandHoldingDollar, faCamera, faHandshakeSimple, faPhone, faCopyright } from '@fortawesome/free-solid-svg-icons'
+import Navigation from '../Navigation'
+import '../../App.css';
+import $ from 'jquery'
+
 
 function Home() {
 const myRef = useRef(null)
 const bioRef = useRef(null)
 const portfolioRef = useRef(null)
 const [isMobile, setIsMobile] = useState(false)
+const [navOpen, setNavOpen] = useState(false)
+
+const onNavClick = () => {
+  setNavOpen(!navOpen)
+  if(navOpen){
+  $('#overlay').hide();
+  $('.lines-button').removeClass('close');
+  }else{
+    $('#overlay').show();
+        $('.lines-button').addClass('close');
+  }
+}
+
+const onBodyClick = () => {
+  setNavOpen(false)
+  if(navOpen){
+  $('#overlay').hide();
+  $('.lines-button').removeClass('close');
+  }
+}
 
 useEffect(() => {
   const handleResize = () => {
-    window.innerWidth > 600 ? setIsMobile(false) : setIsMobile(true)
+    window.innerWidth > 800 ? setIsMobile(false) : setIsMobile(true)
    }
-   
+    window.innerWidth > 800 ? setIsMobile(false) : setIsMobile(true)
    window.addEventListener('resize', handleResize);
    
    return () => {
@@ -32,42 +56,40 @@ const executeScrollToBio = () => bioRef.current.scrollIntoView({ behavior: 'smoo
 const executeScrollToPortfolio = () => portfolioRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })   
 
     return (
-      <>
+      <div style={{backgroundColor: '#10593a'}}>
       <Column className="bg">
-        
-        <div style={{ textAlign: 'center', width: '100vw', height: '100vh'}}>
-            <p style={{color: 'white', fontSize:isMobile ? 25 : 45, marginTop: '35vh'}}>WELCOME TO</p>
-            <p style={{color: 'white', fontSize:isMobile ? 45 : 85, marginTop: '-1%'}}>Lexi Lakota Photography</p>
-        </div>
-        <ResponsiveContainer >
-          <Row>
-            <Button onClick={executeScrollToBio} style={{fontSize: 20, fontWeight: 'bold', backgroundColor: 'rgba(0,0,0, 0.2)', color: 'white'}}>
-              Meet
-            </Button>
-          </Row>
-          <Row>
-            <Button onClick={executeScroll} style={{fontSize: 20, fontWeight: 'bold', backgroundColor: 'rgba(0,0,0, 0.2)', color: 'white'}}>
-            
+        {isMobile ?<button className="lines-button lines" onClick={()=> onNavClick()}><span></span></button>
+        :
+        <div style={{display: 'flex', backgroundColor: '#1a1918', width: '99.1vw', height: 50, justifyContent: 'right'}}>
+          <p className='font-main' style={{color: 'white', fontSize: 20,  margin: 'auto auto auto 20px' }}>Lexi Lakota Photography</p>
+            <p className='font-main' onClick={executeScrollToBio} style={{ margin: 'auto 20px auto 20px',fontSize: 20, cursor: 'pointer', color: 'white', verticalAlign: 'center'}}>
+              About
+            </p>
+            <p className='font-main' onClick={executeScrollToPortfolio} style={{ margin: 'auto 20px auto 20px',fontSize: 20, cursor: 'pointer', color: 'white', verticalAlign: 'center'}}>
+              Portfolio
+            </p>
+            <p className='font-main' onClick={executeScroll} style={{ margin: 'auto 40px auto 20px',fontSize: 20, cursor: 'pointer', color: 'white', verticalAlign: 'center'}}>
               Contact
-            </Button>
-          </Row>
-          <Row>
-          <Button onClick={executeScrollToPortfolio} style={{fontSize: 20, fontWeight: 'bold' , backgroundColor: 'rgba(0,0,0, 0.2)', color: 'white'}}>Portfolio</Button>
-          </Row>
-        </ResponsiveContainer> 
+            </p>
+        </div>}
+        <div style={{ textAlign: 'center', width: '90vw', height: '100vh', margin: 'auto', textShadow: '-5px 5px #000'}}>
+            {/* <p style={{color: 'white', fontSize:isMobile ? 25 : 45, marginTop: '35vh'}}>WELCOME TO</p> */}
+            <p className='font-main' style={{color: 'white', fontSize:isMobile ? 40 : 105, marginTop:isMobile ?'25vh' :'35vh'}}>Lexi Lakota Photography</p>
+        </div>
+
       </Column>
-      <div ref={bioRef} style={{height: 'fit-content', marginTop: 8.65}}>
+      <div ref={bioRef} style={{height: 'fit-content'}}>
               <MeetLexi homePage={true}/>
-      </div>
-      <div ref={myRef}>
-              <Contact />
       </div>
       <div ref={portfolioRef} style={{margin: isMobile ? 5 : 70 }}>
               <Portfolio />
       </div>
+      <div ref={myRef} style={{height: 'fit-content', marginTop: 50, marginBottom: 50}}>
+              <Contact />
+      </div>
       <div style={{height: '30vh'}}>
       </div>
-      </>
+      </div>
     );
   }
 
@@ -85,7 +107,6 @@ const Column = styled.div`
     display: flex;
     flex-direction: column;
     height: 100vh;
-
 `;
 const ResponsiveContainer = styled.div`
     display: flex;

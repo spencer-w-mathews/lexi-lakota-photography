@@ -1,29 +1,35 @@
 import Home from './pages/Home/Home';
 import './App.css';
+import $ from 'jquery'
+import { useEffect, useState } from 'react';
 
 function App() {
-// const [navOpen, setNavOpen] = useState(false)
+const [navOpen, setNavOpen] = useState(false)
 
-// const onNavClick = () => {
-//   setNavOpen(!navOpen)
-//   if(navOpen){
-//   $('#overlay').hide();
-//   $('.lines-button').removeClass('close');
-//   }else{
-//     $('#overlay').show();
-//         $('.lines-button').addClass('close');
-//   }
-// }
+const onNavClick = () => {
+  setNavOpen(!navOpen)
+  if(navOpen){
+  $('#overlay').hide();
+  $('.lines-button').removeClass('close');
+  }else{
+    $('#overlay').show();
+        $('.lines-button').addClass('close');
+  }
+}
 
-// const onBodyClick = () => {
-//   setNavOpen(false)
-//   if(navOpen){
-//   $('#overlay').hide();
-//   $('.lines-button').removeClass('close');
-//   }
-// }
+const onBodyClick = () => {
+  setNavOpen(false)
+  if(navOpen){
+  $('#overlay').hide();
+  $('.lines-button').removeClass('close');
+  }
+}
   return (
-    <Home />
+  <div>
+          
+          <Home />
+   </div>
+    
   )
     // <BrowserRouter>
     //     <div style={{justifyContent: 'space-between', display: 'flex', flexDirection: 'row',zIndex: 3}}>

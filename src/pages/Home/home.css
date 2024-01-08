@@ -4,10 +4,13 @@ body, html {
   }
 
 .bg{
-    background-image: url("../../images/IMG-0817.jpg");
+    background-image: url("../../images/61-IMG_7458-Enhanced-NR.jpg");
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
     z-index: 0;
 }
 
+.font-main{
+  font-family: 'Monoton';
+}

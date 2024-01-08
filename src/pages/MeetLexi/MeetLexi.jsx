@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import lexi from '../../images/Lexi.jpg';
+import lexi from '../../images/Lex.jpg';
 import './meetLexi.css'
 import { useRef, useState, useEffect } from 'react';
 
@@ -7,25 +7,29 @@ function MeetLexi({homePage = false}) {
     const [isMobile, setIsMobile] = useState(false)
     useEffect(() => {
         const handleResize = () => {
-          window.innerWidth > 600 ? setIsMobile(false) : setIsMobile(true)
+          window.innerWidth > 800 ? setIsMobile(false) : setIsMobile(true)
          }
          
          window.addEventListener('resize', handleResize);
-         
+         window.innerWidth > 800 ? setIsMobile(false) : setIsMobile(true)
          return () => {
           window.removeEventListener('resize', handleResize);
          };
       }, [])
     return(
-        <Container>
-            <ResponsiveContainer>
-                <Column>
-                    <h1 className='font-header' style={{fontSize: 60}}>Kansas City</h1>
-                    <h1 className='font-header' style={{fontSize: 40}}>Lifestyle - Maternity - Couples</h1>
-                    <h1 className='font-header' style={{fontSize: 60}}>Photographer</h1>
+        <Container style={{ border: '5px solid black', outline: '1px solid black', outlineOffset: -20}}>
+            <ResponsiveContainer >
+                <Column style={{display: 'flex', margin: 'auto auto auto 0px', textShadow: '-5px 5px #8da89d', textAlign: isMobile ? 'center' : 'center'}}>
+                    <h1 className='font-header' style={{fontSize:isMobile ? 40 : 60, marginTop: 20}}>Kansas City</h1>
+                    <h1 className='font-header' style={{fontSize:isMobile ? 30 : 40, marginTop: isMobile ? '' : -9}}>Lifestyle - Maternity - Couples</h1>
+                    <h1 className='font-header' style={{fontSize:isMobile ? 40 : 60, marginTop: isMobile ? '' : 0}}>Photographer</h1>
                 </Column>
-                <Column>
-                    <p style={{ fontSize: 25, textAlign: 'center'}}>is where a bio goes this is where a bio goes this is where a bio goes this is where a bio goesthis is where a bio goes this is where a bio goesthis is where a bio goes this is where a bio goesthis is where a bio goes this is where a bio goesthis is where a bio goes this is where a bio goesthis is where a bio goes this is where a bio goesthis is where a bio goes this is where a bio goesthis is where a bio goes this is where a bio goesthis is where a bio goes this is where a bio goesthis is where a bio goes this is where a bio goesthis is where a bio goes this is where a bio goesthis is where a bio goes this is where a bio goes</p>
+                <Column style={isMobile ? {marginBottom: 40}: {marginBottom: 40, marginTop: 35}}>
+                    <img src={lexi} style={isMobile ? {display: 'flex', marginLeft: 'auto',marginTop: 20, width: '250px', borderRadius: '200px', marginRight: 'auto', border: '15px solid #c49e14', outline: '1px solid black', outlineOffset: 10}:{display: 'flex', marginLeft: 'auto', width: '500px', borderRadius: '200px', marginRight: 'auto', border: '15px solid #c49e14', outline: '1px solid black', outlineOffset: 10}}/>
+                </Column>
+                <Column style={{display: 'flex', margin: 'auto 0px auto auto', textShadow: '-5px 5px #8da89d', textAlign: isMobile ? 'center' : 'center', marginLeft:isMobile ? 'auto': 30}}>
+                    <h1 className='font-header' style={{fontSize: isMobile ? 30 : 45}}>"Photography takes an instant out of time, altering time by holding it still."</h1>
+                     <h1 className='font-header' style={{fontSize: 20, marginTop: isMobile ? 0 : -9, marginBottom: 20}}>-Dorthia Lange</h1>
                 </Column>
             </ResponsiveContainer>
             {/* <h1 className='font-link' style={{margin: ' 0 auto', fontSize: 40, textAlign: 'center'}}>"Some beautiful Photography Quote"</h1> */}

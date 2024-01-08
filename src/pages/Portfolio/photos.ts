@@ -66,66 +66,64 @@ const breakpoints = [3840, 2400, 1080, 640, 384, 256, 128, 96, 64, 48];
 
 
 const rawPhotos = [
-  { src: img, width: 4946, height: 3297 }, //bw 
-  { src: img1, width: 2048, height: 1365 }, // braden trick
   { src: img2, width: 1365, height: 2048 }, //b plant
-  { src: img3, width: 5184 , height: 3456 }, // kiss head
+  { src: img18, width: 5184, height: 3229 },// tre clouds
+  { src: img, width: 4946, height: 3297 }, //bw 
+  { src: img13, width: 3456 , height: 5184 },//bbs
+  { src: img26, width: 3237, height: 4893 }, // preg water
   { src: img4, width: 4927, height: 3456 }, //moo
-  { src: img5, width: 3764, height: 3456 }, //baby setup
   { src: img6, width: 5184, height: 3456 },//sonogram
-  { src: img7, width: 5184, height: 3456 }, //sono and sky
   { src: img8, width: 5184, height: 3456 }, // gpa
+  { src: img15, width: 1776, height: 1184 }, //han
   { src: img9, width: 3456, height: 4672}, // simi
-  { src: img10, width: 3456 , height: 4338}, // simi
   { src: img11, width: 5184, height: 3456 },//scout
   { src: img12, width: 5127 , height: 3418  }, //mom and bbs
-  { src: img13, width: 3456 , height: 5184 },//bbs
-  { src: img14, width: 5184, height: 3456 }, //bbs
-  { src: img15, width: 1776, height: 1184 }, //han
   { src: img16, width: 3456 , height: 5184 }, //han
   { src: img17, width: 5184, height: 3456 }, //me
-  { src: img18, width: 5184, height: 3229 },// tre clouds
+  { src: img1, width: 2048, height: 1365 }, // braden trick
+  { src: img7, width: 5184, height: 3456 }, //sono and sky
   { src: img19, width: 5033, height: 3355 }, //tre
   { src: img20, width: 4941, height: 3924 }, //airplane
   { src: img21, width: 5184, height: 3456 }, //w dog
   { src: img22, width: 5184, height: 3456 }, //mount
+  { src: img37, width: 3456, height: 5184 }, //chair laugh
   { src: img23, width: 5184, height: 3338 }, //mount
-  { src: img24, width: 5184, height: 3456 }, //me in mount
+  { src: img10, width: 3456 , height: 4338}, // simi
+  { src: img14, width: 5184, height: 3456 }, //bbs
+  { src: img48, width: 3456, height: 5184 }, // m and c boston
+  { src: img34, width: 1707, height: 2560 }, //boy field
   { src: img25, width: 3738, height: 2677 }, //preg water
-  { src: img26, width: 3237, height: 4893 }, // preg water
+  { src: img46, width: 5090, height: 3393 }, //mar dress hold
+  { src: img3, width: 5184 , height: 3456 }, // kiss head
   { src: img27, width: 3445, height: 5168 }, // engage
-  { src: img28, width: 2303, height: 2458 }, //engage run
+  { src: img43, width: 3413, height: 5120 },//hartman mom and baby b & W
+  { src: img39, width: 3377, height: 3496 }, //black dress red flower
+  { src: img24, width: 5184, height: 3456 }, //me in mount
+  { src: img53, width: 5184, height: 3456 }, //marriah laying down
   { src: img29, width: 1714, height: 2255 }, //engage choke
-  { src: img30, width: 3406, height: 4969 }, // engage spin
   { src: img31, width: 3456, height: 5184 }, // sister
+  { src: img57, width: 5184, height: 3456 }, // yoga
   { src: img32, width: 3456, height: 5184 }, // lex photos
   { src: img33, width: 3278, height: 3979 }, //triangle
-  { src: img34, width: 1707, height: 2560 }, //boy field
-  { src: img35, width: 3348, height: 5022 }, //chair
-  { src: img36, width: 3456, height: 5184 }, //chair couple
-  { src: img37, width: 3456, height: 5184 }, //chair laugh
-  { src: img38, width: 3456, height: 5184 }, //forhead kiss baby bump
-  { src: img39, width: 3377, height: 3496 }, //black dress red flower
+  { src: img55, width: 4957, height: 3254 },//yoga 3 posts
+  { src: img47, width: 3456, height: 5184 }, //mar boston
+  { src: img50, width: 5184, height: 3456 }, //peekaboo baby
   { src: img41, width: 3456, height: 5184 }, //hartman mom and baby
+  { src: img36, width: 3456, height: 5184 }, //chair couple
+  { src: img56, width: 3048, height: 5015 }, //yoga 2
+  { src: img60, width: 3456, height: 5184 }, //mom kiss baby
+  { src: img30, width: 3406, height: 4969 }, // engage spin
+  { src: img38, width: 3456, height: 5184 }, //forhead kiss baby bump
+  { src: img28, width: 2303, height: 2458 }, //engage run
   { src: img42, width: 3379, height: 5069 }, //hartman mom and baby b & W
-  { src: img43, width: 3413, height: 5120 },//hartman mom and baby b & W
   { src: img44, width: 5184, height: 3456 }, //siblings kk
   { src: img45, width: 5184, height: 3456 }, //rock running
-  { src: img46, width: 5090, height: 3393 }, //mar dress hold
-  { src: img47, width: 3456, height: 5184 }, //mar boston
-  { src: img48, width: 3456, height: 5184 }, // m and c boston
   { src: img49, width: 5184, height: 3456 }, //airplan baby
-  { src: img50, width: 5184, height: 3456 }, //peekaboo baby
-  { src: img51, width: 3456, height: 5184 }, //m and c burr
   { src: img52, width: 3456, height: 5184 }, //baby bump sun
-  { src: img53, width: 5184, height: 3456 }, //marriah laying down
   { src: img54, width: 3447, height: 5171 }, //yoga window
-  { src: img55, width: 4957, height: 3254 },//yoga 3 posts
-  { src: img56, width: 3048, height: 5015 }, //yoga 2
-  { src: img57, width: 5184, height: 3456 }, // yoga
+  { src: img51, width: 3456, height: 5184 }, //m and c burr
   { src: img58, width: 3368, height: 4501 }, //frame
   { src: img59, width:3456, height: 5184 }, //baby
-  { src: img60, width: 3456, height: 5184 }, //mom kiss baby
   { src: img61, width: 5184, height: 3456 },//cactus
 ];
 

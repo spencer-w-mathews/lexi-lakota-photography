@@ -32,9 +32,9 @@ useEffect(() => {
 
   return (
     <>
-    <div>
+    {/* <div>
       <h1 className='font-header' style={{fontSize: 60, margin: '0px auto'}}>Click Photos to get a closer look!</h1>
-    </div>
+    </div> */}
       <PhotoAlbum photos={photos} layout="rows" targetRowHeight={150} onClick={({ index }) => setIndex(index)} />
 
       <Lightbox
