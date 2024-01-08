@@ -9,9 +9,7 @@ import Contact from '../Contact/Contact';
 import Portfolio from '../Portfolio/Portfolio';
 import { faHouse, faGrip, faHandHoldingDollar, faCamera, faHandshakeSimple, faPhone, faCopyright } from '@fortawesome/free-solid-svg-icons'
 import Navigation from '../Navigation'
-import '../../App.css';
 import $ from 'jquery'
-
 
 function Home() {
 const myRef = useRef(null)
@@ -51,14 +49,29 @@ useEffect(() => {
    };
 }, [])
 
-const executeScroll = () => myRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' }) 
-const executeScrollToBio = () => bioRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })  
-const executeScrollToPortfolio = () => portfolioRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })   
+const executeScroll = () =>{ 
+  myRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' }) 
+  onBodyClick()
+}
+const executeScrollToBio = () =>{ 
+  bioRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' }) 
+  onBodyClick()
+} 
+const executeScrollToPortfolio = () =>{ 
+  portfolioRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  onBodyClick()
+}   
 
     return (
       <div style={{backgroundColor: '#10593a'}}>
       <Column className="bg">
-        {isMobile ?<button className="lines-button lines" onClick={()=> onNavClick()}><span></span></button>
+        {isMobile ?
+        <div>
+          <button className="lines-button lines" onClick={()=> onNavClick()}>
+            <span></span>
+          </button>
+          <Navigation onNavClick={onNavClick} navOpen={navOpen} executeScroll={()=>executeScroll()} executeScrollToBio={() => executeScrollToBio()} executeScrollToPortfolio={()=>executeScrollToPortfolio()}/>
+        </div>
         :
         <div style={{display: 'flex', backgroundColor: '#1a1918', width: '99.1vw', height: 50, justifyContent: 'right'}}>
           <p className='font-main' style={{color: 'white', fontSize: 20,  margin: 'auto auto auto 20px' }}>Lexi Lakota Photography</p>
@@ -73,8 +86,8 @@ const executeScrollToPortfolio = () => portfolioRef.current.scrollIntoView({ beh
             </p>
         </div>}
         <div style={{ textAlign: 'center', width: '90vw', height: '100vh', margin: 'auto', textShadow: '-5px 5px #000'}}>
-            {/* <p style={{color: 'white', fontSize:isMobile ? 25 : 45, marginTop: '35vh'}}>WELCOME TO</p> */}
-            <p className='font-main' style={{color: 'white', fontSize:isMobile ? 40 : 105, marginTop:isMobile ?'25vh' :'35vh'}}>Lexi Lakota Photography</p>
+  
+            <p className='font-main' style={{color: 'white', fontSize: isMobile ? 35 : 85, marginTop:isMobile ?'25vh' :'35vh'}}>Lexi Lakota Photography</p>
         </div>
 
       </Column>

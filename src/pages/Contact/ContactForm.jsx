@@ -4,6 +4,7 @@ import './Contact.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import emailjs from '@emailjs/browser';
 
 const ContactForm = () => {
   const {
@@ -15,11 +16,24 @@ const ContactForm = () => {
   
   const onSubmit = async (data) => {
     const { name, email, subject, message } = data;
-    
-    console.log('Name: ', name);
-    console.log('Email: ', email);
-    console.log('Subject: ', subject);
-    console.log('Message: ', message);
+    try {
+      const templateParams = {
+        name,
+        email,
+        subject,
+        message
+      };
+      await emailjs.send(
+        process.env.REACT_APP_SERVICE_ID,
+        process.env.REACT_APP_TEMPLATE_ID,
+        templateParams,
+        process.env.REACT_APP_PUBLIC_KEY
+      );
+      alert('message sent successfully');
+      reset();
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   return (

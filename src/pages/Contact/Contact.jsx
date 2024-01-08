@@ -21,11 +21,13 @@ function Contact() {
         <div style={{display: 'flex', flexDirection: 'column', textAlign: 'center', backgroundColor: '#FDFEFF'}}>
             <h1 className='font-header' style={{fontSize: 60, margin: '40px auto 0px'}}>Contact me on any of my socials</h1>
             <div style={{display: 'flex', flexDirection: isMobile ? 'column': 'row', marginTop: 20, marginBottom: 20}}>
-                <a href='https://www.instagram.com' target='_blank' style={{display: 'flex', flexDirection: 'row', margin: '10px auto', color: 'black', width: 200}}>
-                    <FontAwesomeIcon icon={faInstagram} size='2x' style={{marginRight: 5}}/>
-                    <p style={{margin: 'auto' }}>@LexiLakotaPhotography</p> 
+                <a href='https://www.instagram.com/lexi_lakotaphotography/' target='_blank' style={{display: 'flex', flexDirection: 'row', margin: '10px auto', color: 'black', width: 280}}>
+                    <div style={{display: 'flex', flexDirection: 'row', margin: '0px auto'}}>
+                        <FontAwesomeIcon icon={faInstagram} size='2x' style={{marginRight: 5}}/>
+                        <p style={{margin: 'auto' }}>@LexiLakotaPhotography</p> 
+                    </div>
                 </a>
-            <a href='https://www.instagram.com' target='_blank' style={{display: 'flex', flexDirection: 'row', margin: '10px auto', color: 'black' , width: 200}}>
+            <a  href='https://www.facebook.com/profile.php?id=100095246892706&mibextid=LQQJ4d' target='_blank' style={{display: 'flex', flexDirection: 'row', margin: '10px auto', color: 'black' , width: 280}}>
                 <div style={{display: 'flex', flexDirection: 'row', margin: '0px auto'}}>
                     <FontAwesomeIcon icon={faFacebook} size='2x' style={{marginRight: 5}}/>
                     <p style={{ margin: 'auto' }}>@LexiLakotaPhotography</p> 
