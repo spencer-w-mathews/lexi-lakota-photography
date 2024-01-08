@@ -19,7 +19,7 @@ function MeetLexi({homePage = false}) {
     return(
         <Container style={{ border: '5px solid black', outline: '1px solid black', outlineOffset: -20}}>
             <ResponsiveContainer >
-                <Column style={{display: 'flex', margin: 'auto auto auto 0px', textShadow: '-2px 2px #8da89d', textAlign: isMobile ? 'center' : 'center'}}>
+                <Column style={{display: 'flex', textShadow: '-2px 2px #8da89d', textAlign: isMobile ? 'center' : 'center', margin:isMobile ? 'auto': 'auto 30px auto 0px'}}>
                     <h1 className='font-header' style={{fontSize:isMobile ? 40 : 60, marginTop: 20}}>Kansas City</h1>
                     <h1 className='font-header' style={{fontSize:isMobile ? 30 : 40, marginTop: isMobile ? '' : -9}}>Lifestyle - Maternity - Couples</h1>
                     <h1 className='font-header' style={{fontSize:isMobile ? 40 : 60, marginTop: isMobile ? '' : 0}}>Photographer</h1>
@@ -27,7 +27,7 @@ function MeetLexi({homePage = false}) {
                 <Column style={isMobile ? {marginBottom: 40}: {marginBottom: 40, marginTop: 35}}>
                     <img src={lexi} style={isMobile ? {display: 'flex', marginLeft: 'auto',marginTop: 20, width: '250px', borderRadius: '200px', marginRight: 'auto', border: '15px solid #c49e14', outline: '1px solid black', outlineOffset: 10}:{display: 'flex', marginLeft: 'auto', width: '500px', borderRadius: '200px', marginRight: 'auto', border: '15px solid #c49e14', outline: '1px solid black', outlineOffset: 10}}/>
                 </Column>
-                <Column style={{display: 'flex', margin: 'auto 0px auto auto', textShadow: '-2px 2px #8da89d', textAlign: isMobile ? 'center' : 'center', marginLeft:isMobile ? 'auto': 30}}>
+                <Column style={{display: 'flex', textShadow: '-2px 2px #8da89d', textAlign: isMobile ? 'center' : 'center', margin:isMobile ? 'auto': 'auto 0px auto 30px'}}>
                     <h1 className='font-header' style={{fontSize: isMobile ? 30 : 45}}>"Photography takes an instant out of time, altering time by holding it still."</h1>
                      <h1 className='font-header' style={{fontSize: 20, marginTop: isMobile ? 0 : -9, marginBottom: 20}}>-Dorthia Lange</h1>
                 </Column>

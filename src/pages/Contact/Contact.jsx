@@ -18,7 +18,7 @@ function Contact() {
          };
       }, [])
     return (
-        <div style={{display: 'flex', flexDirection: 'column', textAlign: 'center', backgroundColor: '#FDFEFF'}}>
+        <div style={{display: 'flex', flexDirection: 'column', textAlign: 'center', backgroundColor: '#FDFEFF',border: '5px solid black', outline: '1px solid black', outlineOffset: -20}}>
             <h1 className='font-header' style={{fontSize: 60, margin: '40px auto 0px'}}>Contact me on any of my socials</h1>
             <div style={{display: 'flex', flexDirection: isMobile ? 'column': 'row', marginTop: 20, marginBottom: 20}}>
                 <a href='https://www.instagram.com/lexi_lakotaphotography/' target='_blank' style={{display: 'flex', flexDirection: 'row', margin: '10px auto', color: 'black', width: 280}}>

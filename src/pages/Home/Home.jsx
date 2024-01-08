@@ -73,7 +73,7 @@ const executeScrollToPortfolio = () =>{
           <Navigation onNavClick={onNavClick} navOpen={navOpen} executeScroll={()=>executeScroll()} executeScrollToBio={() => executeScrollToBio()} executeScrollToPortfolio={()=>executeScrollToPortfolio()}/>
         </div>
         :
-        <div style={{display: 'flex', backgroundColor: '#1a1918', width: '99.1vw', height: 50, justifyContent: 'right'}}>
+        <div style={{display: 'flex', backgroundColor: '#1a1918', width: '100%', height: 50, justifyContent: 'right'}}>
           <p className='font-main' style={{color: 'white', fontSize: 20,  margin: 'auto auto auto 20px' }}>Lexi Lakota Photography</p>
             <p className='font-main' onClick={executeScrollToBio} style={{ margin: 'auto 20px auto 20px',fontSize: 20, cursor: 'pointer', color: 'white', verticalAlign: 'center'}}>
               About
